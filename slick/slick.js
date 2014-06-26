@@ -844,6 +844,8 @@
         $('img[data-lazy]', loadRange).not('[src]').each(function() {
             $(this).css({opacity: 0}).attr('src', $(this).attr('data-lazy')).removeClass('slick-loading').load(function(){
                 $(this).animate({ opacity: 1 }, 200);
+                _.checkResponsive();
+                _.setPosition();
             });
         });
 
@@ -852,6 +854,8 @@
             $('img[data-lazy]', cloneRange).not('[src]').each(function() {
                 $(this).css({opacity: 0}).attr('src', $(this).attr('data-lazy')).removeClass('slick-loading').load(function(){
                     $(this).animate({ opacity: 1 }, 200);
+                    _.checkResponsive();
+                    _.setPosition();
                 });
             });
         } else if (_.currentSlide === 0) {
@@ -859,6 +863,8 @@
             $('img[data-lazy]', cloneRange).not('[src]').each(function() {
                 $(this).css({opacity: 0}).attr('src', $(this).attr('data-lazy')).removeClass('slick-loading').load(function(){
                     $(this).animate({ opacity: 1 }, 200);
+                    _.checkResponsive();
+                    _.setPosition();
                 });
             });
         }
@@ -1701,3 +1707,4 @@
     };
 
 }));
+
